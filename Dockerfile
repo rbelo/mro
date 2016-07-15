@@ -7,7 +7,8 @@ MAINTAINER Rodrigo Belo <rodrigobelo@gmail.com>
 RUN apt-get update \
 	  && apt-get install -y --no-install-recommends \
                ed \
-               libcurl4-openssl-dev
+               libcurl4-openssl-dev \
+               gfortran
 
 WORKDIR /home/docker
 
