@@ -12,7 +12,9 @@ RUN apt-get update \
 
 WORKDIR /home/docker
 
-## Install the Hadleyverse packages (and some close friends).
+## Install R packages.
+## I need first to empty mklLicense.txt because R package 'minqa' does not install otherwise
+RUN rm mklLicense.txt && touch mklLicense.txt
 COPY ./install-packages.R install-packages.R
 RUN R -f install-packages.R
 

@@ -1,4 +1,5 @@
 
+options(repos = c(CRAN = "https://mran.revolutionanalytics.com/snapshot/2016-07-14"))
 install.packages(c("data.table",
                    "ggplot2",
                    "ggthemes",
