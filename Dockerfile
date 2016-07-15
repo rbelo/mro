@@ -38,6 +38,7 @@ RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
     ca-certificates \
 	curl \
+  ed \
 	nano \
 	# MRO dependencies dpkg does not install on its own:
 	libcairo2 \
@@ -60,21 +61,6 @@ RUN apt-get update \
 	gcc \
 	g++ \
 	&& rm -rf /var/lib/apt/lists/*
-
-
-## Install some useful tools and dependencies
-RUN apt-get update \
-	  && apt-get install -y --no-install-recommends \
-               ed \
-               littler \
-#               r-cran-littler \
-    && ln -s /usr/share/doc/littler/examples/install.r /usr/local/bin/install.r \
-	  && ln -s /usr/share/doc/littler/examples/install2.r /usr/local/bin/install2.r \
-	  && ln -s /usr/share/doc/littler/examples/installGithub.r /usr/local/bin/installGithub.r \
-	  && ln -s /usr/share/doc/littler/examples/testInstalled.r /usr/local/bin/testInstalled.r \
-	  && install.r docopt \
-	  && rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
-	  && rm -rf /var/lib/apt/lists/*
 
 
 ## https://mran.revolutionanalytics.com/documents/rro/installation/#revorinst-lin
@@ -115,87 +101,8 @@ RUN rm RevoMath-*.tar.gz \
 #RUN echo 'cat("\n", readLines("/home/docker/mklLicense.txt"), "\n", sep="\n")' >> /usr/lib64/MRO-$MRO_VERSION/R-$MRO_VERSION/lib/R/etc/Rprofile.site
 
 ## Install the Hadleyverse packages (and some close friends).
-RUN install.r --error \
-#    -r "https://cran.rstudio.com" \
-#    -r "http://www.bioconductor.org/packages/release/bioc" \
-    ggplot2 \
-    ggthemes \
-    haven \
-    httr \
-    knitr \
-    lubridate \
-    reshape2 \
-    readr \
-    readxl \
-    revealjs \
-    rmarkdown \
-    rstudioapi \
-    rticles \
-    rvest \
-    rversions \
-    testthat \
-    stringr
-
-## Manually install (useful packages from) the SUGGESTS list of the above packages.
-## (because --deps TRUE can fail when packages are added/removed from CRAN)
-RUN install.r --error \
-    -r "https://cran.rstudio.com" \
-    -r "http://www.bioconductor.org/packages/release/bioc" \
-    base64enc \
-    BiocInstaller \
-    bitops \
-    crayon \
-    codetools \
-    covr \
-    data.table \
-    doParallel \
-    downloader \
-    evaluate \
-    formula.tools \
-    git2r \
-    gridExtra \
-    gmailr \
-    gtable \
-    hexbin \
-    Hmisc \
-    htmlwidgets \
-    hunspell \
-    jpeg \
-    Lahman \
-    lattice \
-    lintr \
-    MASS \
-    openxlsx \
-    PKI \
-    png \
-    microbenchmark \
-    mgcv \
-    mapproj \
-    maps \
-    maptools \
-    mgcv \
-    mosaic \
-    multcomp \
-    nlme \
-    nycflights13 \
-    quantreg \
-    Rcpp \
-    rJava \
-    roxygen2 \
-    RMySQL \
-    RPostgreSQL \
-    RSQLite \
-    stargazer \
-    testit \
-    V8 \
-    withr \
-    XML \
-#  && r -e 'source("https://raw.githubusercontent.com/MangoTheCat/remotes/master/install-github.R")$value("mangothecat/remotes")' \
-#  && r -e 'remotes::install_github("wesm/feather/R")' \
-  && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
-
-
-
+COPY ./install-packages.R install-packages.R
+RUN R -f install-packages.R
 
 
 WORKDIR /home/docker
