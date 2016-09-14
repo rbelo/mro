@@ -1,6 +1,6 @@
 ## Emacs, make this -*- mode: sh; -*-
 
-FROM nuest/docker-mro:latest
+FROM nuest/mro:latest
 MAINTAINER Rodrigo Belo <rodrigobelo@gmail.com>
 
 ## Install extra packages need
