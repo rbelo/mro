@@ -1,12 +1,14 @@
 
 options(repos = c(CRAN = "https://mran.revolutionanalytics.com/snapshot/2016-07-14"))
-install.packages(c("data.table",
+install.packages(c("caret",
+                   "data.table",
                    "ggplot2",
                    "ggthemes",
                    "haven",
                    "httr",
                    "knitr",
                    "lubridate",
+                   "lfe",
                    "reshape2",
                    "readr",
                    "readxl",
