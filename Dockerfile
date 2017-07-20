@@ -7,6 +7,7 @@ MAINTAINER Rodrigo Belo <rodrigobelo@gmail.com>
 RUN apt-get update \
 	  && apt-get install -y --no-install-recommends \
                ed \
+               build-essential \
                libcurl4-openssl-dev \
                gfortran
 
