@@ -9,7 +9,8 @@ RUN apt-get update \
                ed \
                build-essential \
                libcurl4-openssl-dev \
-               gfortran
+               gfortran \
+               libmariadbclient-dev
 
 WORKDIR /home/docker
 
