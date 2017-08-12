@@ -10,7 +10,8 @@ RUN apt-get update \
                build-essential \
                libcurl4-openssl-dev \
                gfortran \
-               libmariadbclient-dev
+               libmariadbclient-dev \
+               default-jdk
 
 WORKDIR /home/docker
 
