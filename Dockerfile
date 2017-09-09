@@ -10,7 +10,8 @@ RUN apt-get update \
                build-essential \
                libcurl4-openssl-dev \
                gfortran \
-               libmariadbclient-dev
+               libmariadbclient-dev \
+               default-jdk
 
 WORKDIR /home/docker
 
@@ -21,4 +22,4 @@ RUN rm MRO_EULA.txt && touch MRO_EULA.txt
 COPY ./install-packages.R install-packages.R
 RUN R -f install-packages.R
 
-CMD ["/usr/bin/R --no-save"]
+CMD ["/usr/bin/R"]

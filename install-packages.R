@@ -1,5 +1,5 @@
 
-options(repos = c(CRAN = "https://mran.revolutionanalytics.com/snapshot/2016-07-14"))
+options(repos = c(CRAN = "https://mran.microsoft.com/snapshot/2017-05-01"))
 install.packages(c("caret",
                    "data.table",
                    "formula.tools",
