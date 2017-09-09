@@ -2,6 +2,7 @@
 options(repos = c(CRAN = "https://mran.revolutionanalytics.com/snapshot/2016-07-14"))
 install.packages(c("caret",
                    "data.table",
+                   "formula.tools",
                    "ggplot2",
                    "ggthemes",
                    "gtools",
@@ -19,8 +20,8 @@ install.packages(c("caret",
                    "rticles",
                    "rvest",
                    "rversions",
-                   "testthat",
-                   "stringr"
+                   "stringr",
+                   "testthat"
                    ))
 
 install.packages(c("base64enc",
