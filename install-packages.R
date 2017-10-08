@@ -2,7 +2,6 @@
 options(repos = c(CRAN = "https://mran.microsoft.com/snapshot/2017-05-01"))
 install.packages(c("caret",
                    "data.table",
-                   "formula.tools",
                    "ggplot2",
                    "ggthemes",
                    "gtools",
