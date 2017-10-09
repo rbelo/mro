@@ -1,6 +1,6 @@
 ## Emacs, make this -*- mode: sh; -*-
 
-FROM nuest/mro:3.2.5
+FROM nuest/mro:3.2.5 
 MAINTAINER Rodrigo Belo <rodrigobelo@gmail.com>
 
 ## Install extra packages need
