@@ -15,7 +15,8 @@ RUN apt-get update \
                r-cran-rmysql \
                libnlopt-dev \
                libblas-dev \
-               liblapack-dev
+               liblapack-dev \
+               libxml2-dev
 
 
 WORKDIR /home/docker
