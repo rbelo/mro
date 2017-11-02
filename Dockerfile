@@ -11,7 +11,8 @@ RUN apt-get update \
                libcurl4-openssl-dev \
                gfortran \
                mariadb-server \
-               default-jdk
+               default-jdk \
+               r-cran-rmysql
 
 WORKDIR /home/docker
 
