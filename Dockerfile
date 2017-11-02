@@ -12,7 +12,8 @@ RUN apt-get update \
                gfortran \
                mariadb-server \
                default-jdk \
-               r-cran-rmysql
+               r-cran-rmysql \
+               libnlopt-dev
 
 WORKDIR /home/docker
 
