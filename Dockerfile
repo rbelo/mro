@@ -10,14 +10,16 @@ RUN apt-get update \
                build-essential \
                libcurl4-openssl-dev \
                gfortran \
+               libmariadb-client-lgpl-dev \
                mariadb-server \
                default-jdk \
                r-cran-rmysql \
                libnlopt-dev \
                libblas-dev \
                liblapack-dev \
-               libxml2-dev
-
+               libxml2-dev \
+               libv8-3.14-dev \
+               libssl-dev
 
 WORKDIR /home/docker
 
