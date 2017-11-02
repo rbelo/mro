@@ -13,7 +13,10 @@ RUN apt-get update \
                mariadb-server \
                default-jdk \
                r-cran-rmysql \
-               libnlopt-dev
+               libnlopt-dev \
+               libblas-dev \
+               liblapack-dev
+
 
 WORKDIR /home/docker
 
